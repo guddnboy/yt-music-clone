@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/themeProvider";
 import { sleep } from "@/lib/utils";
+import Sidebar from "@/components/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +17,6 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    console.log("before RootLayout sleep...");
-    await sleep(2000);
-    console.log("after RootLayout sleep...");
-
     return (
         <html lang="en">
             <body className={inter.className}>
@@ -28,7 +25,7 @@ export default async function RootLayout({
                     defaultTheme="dark"
                     enableSystem
                     disableTransitionOnChange>
-                    {children}
+                    <Sidebar>{children}</Sidebar>
                 </ThemeProvider>
             </body>
         </html>

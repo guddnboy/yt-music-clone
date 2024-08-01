@@ -1,12 +1,7 @@
 import React from "react";
 
 const layout = ({ children }) => {
-    return (
-        <div>
-            library layout
-            {children}
-        </div>
-    );
+    return <div>{children}</div>;
 };
 
 export default layout;
